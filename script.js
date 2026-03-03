@@ -206,3 +206,24 @@ window.addEventListener('load', () => {
 });
 
 console.log('%c✦ Doctor Website Ready ✦', 'color: #c9a84c; font-size: 14px; font-weight: bold;');
+
+// ─────────────────────────────────────────────
+// 9. LAZY LOAD VIDEOS
+// ─────────────────────────────────────────────
+const videos = document.querySelectorAll('video');
+
+const videoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const video = entry.target;
+      video.preload = 'auto';
+      video.load();
+      videoObserver.unobserve(video);
+    }
+  });
+}, { threshold: 0.25 });
+
+videos.forEach(video => {
+  video.preload = 'none';
+  videoObserver.observe(video);
+});
