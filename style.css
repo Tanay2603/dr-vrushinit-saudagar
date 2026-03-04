@@ -299,7 +299,9 @@ img { max-width: 100%; display: block; }
    ============================================= */
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; text-align: center; }
-  .hero-image-wrap { display: none; }
+  .hero-image-wrap { display: flex; }
+  .floating-card { display: none; }
+
   .hero-actions { justify-content: center; }
   .hero-desc { margin: 0 auto 2.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
