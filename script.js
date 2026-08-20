@@ -229,3 +229,10 @@ videos.forEach(video => {
   video.preload = 'none';
   videoObserver.observe(video);
 });
+
+
+// ─────────────────────────────────────────────
+// 10. AUTO COPYRIGHT YEAR
+// ─────────────────────────────────────────────
+const footerYear = document.getElementById('footerYear');
+if (footerYear) footerYear.textContent = new Date().getFullYear();
